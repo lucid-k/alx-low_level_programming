@@ -1,5 +1,11 @@
 # include <stdio.h>
 
+/**
+ * main - prints greeting
+ *
+ * Return: Always 0 (Success)
+ */
+
 int main(void)
 {
 	printf("Hello world!\n");
