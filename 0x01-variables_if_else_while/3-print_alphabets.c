@@ -9,16 +9,17 @@
 int main(void)
 {
 	char x = 'a', y = 'A';
-	int i;
 
-	for (i = 0; i < 26; i++)
+	while (x < 123)
 	{
-		putchar(x + i);
+		putchar(x);
+		x++;
 	}
 
-	for (i = 0; i < 26; i++)
+	while (y < 91)
 	{
-		putchar(y + i);
+		putchar(y);
+		y++;
 	}
 
 	putchar('\n');
