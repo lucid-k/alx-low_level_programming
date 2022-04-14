@@ -1,47 +1,65 @@
-#include <limits.h>
-#include <math.h>
 #include <stdio.h>
 
+
 /**
- * main - entry point
- *
- * Return: Always 0.
+ *numLength - returns the lenth of string
+ *@num : operand number
+ *Return: number of digits
+ */
+int numLength(int num)
+{
+	int length = 0;
+
+	if (!num)
+	{
+		return (1);
+	}
+
+	while (num)
+	{
+		num = num / 10;
+		length += 1;
+	}
+
+
+	return (length);
+}
+
+/**
+ *main - prints the first 98 fibonaci sequences
+ *Return: 0
  */
 int main(void)
 {
-	int i;
-	int j;
-	long a_lo = 1;
-	long b_lo = 2;
-	long a_hi = 0;
-	long b_hi = 0;
-	int limit_len = floor(log10(LONG_MAX / 2));
-	long limit = pow(10, limit_len);
 
-	for (i = 0; i < 98; ++i)
+	unsigned long f1 = 1, f2 = 2, tmp, mx = 100000000, f1o = 0, f2o = 0, tmpo = 0;
+	short int i = 1, initial0s;
+
+	while (i <= 98)
 	{
-		if (a_hi)
-		{
-			printf("%ld", a_hi);
-			for (j = floor(log10(a_lo)) + 1; j < limit_len; ++j)
-				putchar('0');
-		}
-		printf("%ld", a_lo);
-		b_lo = b_lo + a_lo;
-		a_lo = b_lo - a_lo;
-		a_hi = b_hi - a_hi;
-		b_hi = b_hi + a_hi;
-		if (b_lo >= limit)
-		{
-			b_hi += b_lo / limit;
-			b_lo %= limit;
-			a_hi += a_lo / limit;
-			a_lo %= limit;
-		}
-		if (i < 97)
-			printf(", ");
-	}
-	putchar('\n');
 
+		if (f1o > 0)
+			printf("%lu", f1o);
+		initial0s = numLength(mx) - 1 - numLength(f1);
+		while (f1o > 0 && initial0s > 0)
+		{
+			printf("%i", 0);
+			initial0s--;
+		}
+		printf("%lu", f1);
+
+		tmp = (f1 + f2) % mx;
+		tmpo = f1o + f2o + (f1 + f2) / mx;
+		f1 = f2;
+		f1o = f2o;
+		f2 = tmp;
+		f2o = tmpo;
+
+		if (i != 98)
+			printf(", ");
+		else
+			printf("\n");
+		i++;
+	}
 	return (0);
 }
