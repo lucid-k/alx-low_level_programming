@@ -1,9 +1,12 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - function definition
- * Definition - add 2 numbers
+ * add - add two integers
+ * @a: int parameter 1
+ * @b: int parameter 2
+ *
+ * Description: returns sum of two integers
+ *
  * Return: result of addition.
  */
 int add(int a, int b)
