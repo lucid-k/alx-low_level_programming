@@ -2,11 +2,8 @@
 
 /**
  * main - prints numbers 1 to 100
- * Description: prints Fizz for multiples of 3
- *      :prints Buzz for multiples of 5
- *      :prints FizzBuzz for multiples of both 3 and 5
  *
- * Return: 0 for success
+ * Return: always 0
  */
 
 int main(void)
