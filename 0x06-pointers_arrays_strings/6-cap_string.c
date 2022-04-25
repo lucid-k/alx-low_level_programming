@@ -6,7 +6,6 @@
  *
  * Return: A pointer to the changed string.
  */
-/**
 char *cap_string(char *str)
 {
 	int index = 0;
@@ -37,7 +36,7 @@ char *cap_string(char *str)
 
 	return (str);
 }
-*/
+/**
  char *cap_string(char *s)
 {
 	int a = 0, i;
@@ -61,3 +60,4 @@ char *cap_string(char *str)
 
 	return (s);
 }
+*/
